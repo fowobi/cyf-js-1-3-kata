@@ -19,7 +19,17 @@
 // as 4 and 3 are the only provided numbers between 2 and 4 (inclusive)
 
 function filterNumberArray(numberList, lowerLimit, upperLimit) {
-    return [];
+    if (lowerLimit > upperLimit) {
+    return numberList;
+  }
+      // Filter the numberList to include only integers between lowerLimit and upperLimit (inclusive)
+  const filteredList = numberList.filter(num => {
+    return Number.isInteger(num) && num >= lowerLimit && num <= upperLimit;
+  });
+
+  return filteredList;
 }
+
+
 
 module.exports.filterNumberArray = filterNumberArray;
